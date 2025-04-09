@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NBA Theme Specific Styles - Blue Theme */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8f8f8;
+    color: #333333;
+  }
+  
+  ::selection {
+    background-color: rgba(23, 64, 139, 0.3);
+    color: #333333;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl font-bold text-nba-blue mb-4;
+  }
+  
+  .section-divider {
+    @apply w-16 h-1 bg-nba-blue mx-auto;
+  }
+  
+  .nav-link {
+    @apply px-3 py-2 text-sm font-medium hover:bg-btn-gold hover:bg-opacity-75 rounded-md;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 bg-btn-gold hover:bg-btn-gold-dark text-white font-medium rounded-md transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply px-4 py-2 border border-btn-gold text-btn-gold hover:bg-btn-gold hover:text-white font-medium rounded-md transition-all duration-200;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Additional blue theme utilities */
+.gold-gradient {
+  background: linear-gradient(135deg, #17408B 0%, #2A5DB0 50%, #0D2456 100%);
+}
+
+.gold-text-shadow {
+  text-shadow: 1px 1px 2px rgba(23, 64, 139, 0.5);
+}
+
+.gold-box-shadow {
+  box-shadow: 0 4px 6px rgba(23, 64, 139, 0.2);
+}
+
+/* Gold button utilities */
+.btn-gold {
+  background-color: #aa914a;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  background-color: #8a744a;
+  box-shadow: 0 2px 4px rgba(170, 145, 74, 0.3);
+}
